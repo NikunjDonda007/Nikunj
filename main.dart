@@ -75,11 +75,13 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Column(
-        children: [
-          Cardpannel(name:'Milan' ,score:'Score 100' ,url: 'https://image.shutterstock.com/image-photo/indian-boy-catching-cricket-ball-260nw-1848675229.jpg',),
-          Cardpannel(name: 'Nikunj', url: 'https://image.shutterstock.com/image-photo/cricket-batsman-action-on-professional-600w-679602739.jpg', score: '200')
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Cardpannel(name:'Mr.Nik007' ,score:'Score 100' ,url: 'https://image.shutterstock.com/image-photo/indian-boy-catching-cricket-ball-260nw-1848675229.jpg',),
+            Cardpannel(name: 'Nikunj', url: 'https://image.shutterstock.com/image-photo/cricket-batsman-action-on-professional-600w-679602739.jpg', score: '200')
+          ],
+        ),
       )
     );
   }
@@ -99,7 +101,7 @@ class Cardpannel extends StatelessWidget {
       child: Column(children: [
         Text(name),
         Image.network(url),
-        Text(score)
+        Text(score,style: TextStyle(color: Colors.green),)
       ],),
     );
   }
